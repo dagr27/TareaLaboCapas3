@@ -5,13 +5,11 @@
 <title>Compra</title>
 </head>
 <body>
-	<form th:action="@{/validate}" method="post" th:object = "ballP">
+	<form th:action="@{/validate}" method="post" th:object="${product}">
 	<label> Product: </label>
-	<th>
 		<select th:field="*{id}">
-			<option th:each = "p : ballP" th:value="${p.id}" th:text="${p.nombre}">
+			<option th:each = "p : ${ballP}" th:value="${p.id}" th:text="${p.nombre} + ${p.cantidad}">
 		</select>
-	</th>
 	<br>
 	<label>Cantidad: </label><input type="text" th:field="*{cantidad}">
 	<br>
